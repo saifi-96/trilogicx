@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     author: "Sidra Arshad",
     date: "October 12, 2023",
     category: "Engineering",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=React+Server+Components",
+    imageUrl: "/images/blog/blog_react_server_components_1784070750614.png",
     content: [
       {
         heading: "A Shift in Rendering Paradigms",
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
     author: "Design Team",
     date: "November 05, 2023",
     category: "Design",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=AI+Design",
+    imageUrl: "/images/blog/blog_ai_design_1784070759823.png",
     content: [
       {
         heading: "Beyond Traditional Interfaces",
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     author: "Mobile Engineering",
     date: "December 18, 2023",
     category: "Engineering",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=Flutter+Enterprise",
+    imageUrl: "/images/blog/blog_flutter_enterprise_1784070768069.png",
     content: [
       {
         heading: "The Cross-Platform Dilemma",
@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
     author: "Sidra Arshad",
     date: "January 22, 2024",
     category: "AI",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=LLM+Integration",
+    imageUrl: "/images/blog/blog_llm_integration_1784070776930.png",
     content: [
       {
         heading: "The Challenge of Legacy Tech",
@@ -156,7 +156,7 @@ export const blogPosts: BlogPost[] = [
     author: "Sidra Arshad",
     date: "February 14, 2024",
     category: "Company",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=Trilogicx+Journey",
+    imageUrl: "/images/blog/blog_trilogicx_first_year_1784070785243.png",
     content: [
       {
         heading: "The Genesis",
@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
     author: "Engineering Team",
     date: "March 03, 2024",
     category: "Engineering",
-    imageUrl: "https://placehold.co/800x400/0F172A/FFFFFF?text=Web+Vitals",
+    imageUrl: "/images/blog/blog_web_vitals_1784070793495.png",
     content: [
       {
         heading: "Why Core Web Vitals Matter",
