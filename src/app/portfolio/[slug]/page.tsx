@@ -110,12 +110,10 @@ export default async function CaseStudyPage({ params }: Props) {
               <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">Next Project</p>
               <h3 className="text-2xl md:text-3xl font-bold">{nextStudy.title}</h3>
             </div>
-            <Link href={`/portfolio/${nextStudy.slug}`}>
-              <Button variant="gradient" size="lg" className="rounded-full px-8">
-                View Case Study
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <Button render={<Link href={`/portfolio/${nextStudy.slug}`} />} variant="gradient" size="lg" className="rounded-full px-8">
+              View Case Study
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </Container>
       </Section>

@@ -163,7 +163,9 @@ export function Navbar() {
               <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <Button variant="gradient">Let&apos;s Talk</Button>
+            <Button render={<Link href="/contact" />} variant="gradient">
+              Let&apos;s Talk
+            </Button>
           </div>
         </div>
 
@@ -198,7 +200,9 @@ export function Navbar() {
                 <Link href="/blog" className="text-lg font-medium hover:text-primary transition-colors">Blog</Link>
                 <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">Contact</Link>
                 <div className="mt-4">
-                  <Button variant="gradient" className="w-full">Let&apos;s Talk</Button>
+                  <Button render={<Link href="/contact" />} variant="gradient" className="w-full">
+                    Let&apos;s Talk
+                  </Button>
                 </div>
               </div>
             </SheetContent>

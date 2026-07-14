@@ -44,12 +44,10 @@ export default function Home() {
                 We deliver end-to-end digital engineering tailored to modern enterprise needs.
               </p>
             </div>
-            <Link href="/services">
-              <Button variant="ghost" className="group">
-                View all 21 services
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
+            <Button render={<Link href="/services" />} variant="ghost" className="group">
+              View all 21 services
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

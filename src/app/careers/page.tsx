@@ -124,12 +124,10 @@ export default function CareersPage() {
                     <MapPin className="h-5 w-5 shrink-0" />
                     <span className="font-medium">{job.location}</span>
                   </div>
-                  <Link href={`mailto:info@trilogicx.com?subject=Application for ${job.title}`} className="w-full sm:w-auto lg:w-full">
-                    <Button variant="gradient" className="w-full group-hover:scale-105 transition-transform duration-300">
-                      Apply Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
+                  <Button render={<Link href={`mailto:info@trilogicx.com?subject=Application for ${job.title}`} />} variant="gradient" className="w-full sm:w-auto lg:w-full group-hover:scale-105 transition-transform duration-300">
+                    Apply Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             ))}
@@ -137,9 +135,9 @@ export default function CareersPage() {
           
           <div className="mt-16 text-center">
             <p className="text-muted-foreground mb-4">Don&apos;t see a role that fits your profile?</p>
-            <Link href="mailto:info@trilogicx.com?subject=General Application">
-              <Button variant="outline">Submit a General Application</Button>
-            </Link>
+            <Button render={<Link href="mailto:info@trilogicx.com?subject=General Application" />} variant="outline">
+              Submit a General Application
+            </Button>
           </div>
         </Container>
       </Section>

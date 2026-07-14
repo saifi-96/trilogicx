@@ -20,30 +20,22 @@ export function Footer() {
               Trilogicx is a premium software development agency specializing in next-generation web applications, AI integration, and robust mobile solutions.
             </p>
             <div className="flex gap-4">
-              <Link href="https://twitter.com/trilogicx" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
-                  <FaTwitter className="h-4 w-4" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-              </Link>
-              <Link href="https://linkedin.com/company/trilogicx" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
-                  <FaLinkedin className="h-4 w-4" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
-              </Link>
-              <Link href="https://facebook.com/trilogicx" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
-                  <FaFacebook className="h-4 w-4" />
-                  <span className="sr-only">Facebook</span>
-                </Button>
-              </Link>
-              <Link href="https://instagram.com/trilogicx" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
-                  <FaInstagram className="h-4 w-4" />
-                  <span className="sr-only">Instagram</span>
-                </Button>
-              </Link>
+              <Button render={<Link href="https://twitter.com/trilogicx" target="_blank" rel="noopener noreferrer" />} variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
+                <FaTwitter className="h-4 w-4" />
+                <span className="sr-only">Twitter</span>
+              </Button>
+              <Button render={<Link href="https://linkedin.com/company/trilogicx" target="_blank" rel="noopener noreferrer" />} variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
+                <FaLinkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </Button>
+              <Button render={<Link href="https://facebook.com/trilogicx" target="_blank" rel="noopener noreferrer" />} variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
+                <FaFacebook className="h-4 w-4" />
+                <span className="sr-only">Facebook</span>
+              </Button>
+              <Button render={<Link href="https://instagram.com/trilogicx" target="_blank" rel="noopener noreferrer" />} variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-primary">
+                <FaInstagram className="h-4 w-4" />
+                <span className="sr-only">Instagram</span>
+              </Button>
             </div>
           </div>
 

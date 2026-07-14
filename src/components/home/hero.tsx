@@ -119,16 +119,12 @@ export function Hero() {
             Trilogicx is a premium agency specializing in Next.js, AI Solutions, and cutting-edge mobile apps for forward-thinking companies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Link href="/services">
-              <Button variant="gradient" size="lg" className="w-full sm:w-auto h-12 px-8 text-base">
-                Explore Services
-              </Button>
-            </Link>
-            <Link href="/portfolio">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto h-12 px-8 text-base bg-background/50 backdrop-blur-sm">
-                Our Portfolio
-              </Button>
-            </Link>
+            <Button render={<Link href="/services" />} variant="gradient" size="lg" className="w-full sm:w-auto h-12 px-8 text-base">
+              Explore Services
+            </Button>
+            <Button render={<Link href="/portfolio" />} variant="outline" size="lg" className="w-full sm:w-auto h-12 px-8 text-base bg-background/50 backdrop-blur-sm">
+              Our Portfolio
+            </Button>
           </div>
         </div>
       </Container>

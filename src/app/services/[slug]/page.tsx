@@ -62,11 +62,9 @@ export default async function ServicePage({ params }: Props) {
             </p>
 
             <div className="pt-4 flex gap-4">
-              <Link href="/contact">
-                <Button variant="gradient" size="lg">
-                  Discuss Your Project
-                </Button>
-              </Link>
+              <Button render={<Link href="/contact" />} variant="gradient" size="lg">
+                Discuss Your Project
+              </Button>
             </div>
           </div>
         </Container>
