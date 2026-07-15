@@ -5,9 +5,7 @@ import { MapPin, Mail, Phone, MessageSquare, Send } from "lucide-react"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { ContactForm } from "@/components/forms/contact-form"
 
 export const metadata: Metadata = {
   title: "Contact Us | Trilogicx",
@@ -100,46 +98,7 @@ export default function ContactPage() {
                 Fill out the form below and a technical consultant will get back to you within 24 hours.
               </p>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="first-name" className="text-sm font-medium">First Name</label>
-                    <Input id="first-name" placeholder="John" className="bg-muted/50" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="last-name" className="text-sm font-medium">Last Name</label>
-                    <Input id="last-name" placeholder="Doe" className="bg-muted/50" />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Work Email</label>
-                  <Input id="email" type="email" placeholder="john@company.com" className="bg-muted/50" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-sm font-medium">Company (Optional)</label>
-                  <Input id="company" placeholder="Acme Inc." className="bg-muted/50" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">How can we help?</label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your project requirements..." 
-                    className="bg-muted/50 min-h-[120px] resize-y" 
-                  />
-                </div>
-
-                <Button variant="gradient" size="lg" className="w-full text-base h-12">
-                  Send Message
-                  <Send className="ml-2 h-4 w-4" />
-                </Button>
-                
-                <p className="text-xs text-center text-muted-foreground">
-                  By submitting this form, you agree to our privacy policy.
-                </p>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </Container>

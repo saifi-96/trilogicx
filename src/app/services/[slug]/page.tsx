@@ -7,6 +7,7 @@ import { ArrowLeft, CheckCircle2 } from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { Button } from "@/components/ui/button"
+import { ServiceForm } from "@/components/forms/service-form"
 import { services } from "@/lib/data/services"
 
 type Props = {
@@ -99,17 +100,7 @@ export default async function ServicePage({ params }: Props) {
               <p className="text-muted-foreground mb-8">
                 Let&apos;s discuss how our {service.title.toLowerCase()} services can help you achieve your business objectives.
               </p>
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Work Email</label>
-                  <input type="email" className="w-full p-3 rounded-lg border bg-background" placeholder="hello@company.com" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Project Details</label>
-                  <textarea className="w-full p-3 rounded-lg border bg-background" rows={4} placeholder="Tell us about your needs..." />
-                </div>
-                <Button variant="gradient" className="w-full h-12">Submit Request</Button>
-              </form>
+              <ServiceForm />
             </div>
           </div>
         </Container>

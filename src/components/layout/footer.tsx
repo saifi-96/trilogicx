@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { Logo } from "@/components/ui/logo"
 import { Container } from "@/components/layout/container"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { NewsletterForm } from "@/components/forms/newsletter-form"
 
 export function Footer() {
   return (
@@ -86,17 +86,7 @@ export function Footer() {
             <p className="text-muted-foreground text-sm mb-4">
               Subscribe to get the latest news and insights delivered to your inbox.
             </p>
-            <form className="space-y-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-muted/50 border-transparent focus-visible:border-primary"
-                required
-              />
-              <Button variant="gradient" className="w-full">
-                Subscribe
-              </Button>
-            </form>
+            <NewsletterForm />
             <p className="text-xs text-muted-foreground mt-4">
               By subscribing, you agree to our Privacy Policy.
             </p>
