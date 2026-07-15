@@ -9,15 +9,25 @@ export function ServiceForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate network request
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSuccess(true)
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "")
+    formData.append("subject", "New Project Request - Trilogicx Services")
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      if (res.ok) setIsSuccess(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSuccess) {
@@ -40,6 +50,7 @@ export function ServiceForm() {
         <label htmlFor="service-email" className="text-sm font-medium">Work Email</label>
         <input 
           id="service-email"
+          name="email"
           type="email" 
           className="w-full p-3 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" 
           placeholder="hello@company.com" 
@@ -50,6 +61,7 @@ export function ServiceForm() {
         <label htmlFor="service-details" className="text-sm font-medium">Project Details</label>
         <textarea 
           id="service-details"
+          name="message"
           className="w-full p-3 rounded-lg border bg-background min-h-[100px] resize-y focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" 
           rows={4} 
           placeholder="Tell us about your needs..." 

@@ -11,15 +11,32 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate network request
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "")
+    formData.append("subject", "New Contact Request - Trilogicx")
     
-    setIsSubmitting(false)
-    setIsSuccess(true)
+    // Add full name
+    const firstName = formData.get("first-name")
+    const lastName = formData.get("last-name")
+    if (firstName && lastName) {
+      formData.append("name", `${firstName} ${lastName}`)
+    }
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      if (res.ok) setIsSuccess(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSuccess) {
@@ -48,28 +65,29 @@ export function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label htmlFor="first-name" className="text-sm font-medium">First Name</label>
-          <Input id="first-name" placeholder="John" className="bg-muted/50" required />
+          <Input id="first-name" name="first-name" placeholder="John" className="bg-muted/50" required />
         </div>
         <div className="space-y-2">
           <label htmlFor="last-name" className="text-sm font-medium">Last Name</label>
-          <Input id="last-name" placeholder="Doe" className="bg-muted/50" required />
+          <Input id="last-name" name="last-name" placeholder="Doe" className="bg-muted/50" required />
         </div>
       </div>
       
       <div className="space-y-2">
         <label htmlFor="email" className="text-sm font-medium">Work Email</label>
-        <Input id="email" type="email" placeholder="john@company.com" className="bg-muted/50" required />
+        <Input id="email" name="email" type="email" placeholder="john@company.com" className="bg-muted/50" required />
       </div>
       
       <div className="space-y-2">
         <label htmlFor="company" className="text-sm font-medium">Company (Optional)</label>
-        <Input id="company" placeholder="Acme Inc." className="bg-muted/50" />
+        <Input id="company" name="company" placeholder="Acme Inc." className="bg-muted/50" />
       </div>
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">How can we help?</label>
         <Textarea 
           id="message" 
+          name="message"
           placeholder="Tell us about your project requirements..." 
           className="bg-muted/50 min-h-[120px] resize-y"
           required

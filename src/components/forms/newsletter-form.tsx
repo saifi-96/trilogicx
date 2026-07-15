@@ -10,15 +10,25 @@ export function NewsletterForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate network request
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setIsSuccess(true)
+    const formData = new FormData(e.currentTarget)
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "")
+    formData.append("subject", "New Newsletter Subscription - Trilogicx")
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      if (res.ok) setIsSuccess(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSuccess) {
@@ -33,6 +43,7 @@ export function NewsletterForm() {
   return (
     <form className="space-y-2" onSubmit={handleSubmit}>
       <Input
+        name="email"
         type="email"
         placeholder="Enter your email"
         className="bg-muted/50 border-transparent focus-visible:border-primary"
