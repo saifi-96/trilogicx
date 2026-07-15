@@ -181,26 +181,26 @@ export function Navbar() {
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          <Sheet>
-            <SheetTrigger render={<Button variant="ghost" size="icon" />}>
-              <Menu className="h-5 w-5" />
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden" />}>
+              <Menu className="h-5 w-5 pointer-events-none" />
               <span className="sr-only">Open menu</span>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] p-6 border-l shadow-2xl">
+              <SheetHeader className="px-0 pt-0">
                 <SheetTitle>
                   <Logo />
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-4 py-8">
-                <Link href="/services" className="text-lg font-medium hover:text-primary transition-colors">Services</Link>
-                <Link href="/portfolio" className="text-lg font-medium hover:text-primary transition-colors">Portfolio</Link>
-                <Link href="/about" className="text-lg font-medium hover:text-primary transition-colors">About</Link>
-                <Link href="/careers" className="text-lg font-medium hover:text-primary transition-colors">Careers</Link>
-                <Link href="/blog" className="text-lg font-medium hover:text-primary transition-colors">Blog</Link>
-                <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">Contact</Link>
+              <div className="flex flex-col gap-6 py-8">
+                <Link href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">Services</Link>
+                <Link href="/portfolio" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">Portfolio</Link>
+                <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">About</Link>
+                <Link href="/careers" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">Careers</Link>
+                <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">Blog</Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary transition-colors">Contact</Link>
                 <div className="mt-4">
-                  <Button render={<Link href="/contact" />} variant="gradient" className="w-full">
+                  <Button render={<Link href="/contact" onClick={() => setIsOpen(false)} />} variant="gradient" className="w-full">
                     Let&apos;s Talk
                   </Button>
                 </div>
