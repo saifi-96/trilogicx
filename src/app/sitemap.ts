@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
 import { services } from '@/lib/data/services'
 import { caseStudies } from '@/lib/data/portfolio'
-import { posts } from '@/lib/data/blog'
+import { blogPosts } from '@/lib/data/blog'
+
+export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://trilogicx.com'
@@ -31,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dynamic Blog pages
-  const blogRoutes = posts.map((post) => ({
+  const blogRoutes = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date).toISOString(),
     changeFrequency: 'yearly' as const,
