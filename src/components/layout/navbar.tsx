@@ -62,6 +62,7 @@ const services = [
 export function Navbar() {
   const { setTheme, theme } = useTheme()
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   React.useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
