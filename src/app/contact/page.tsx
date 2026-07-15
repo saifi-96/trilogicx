@@ -82,11 +82,13 @@ export default function ContactPage() {
               </div>
 
               <div className="relative aspect-video w-full rounded-3xl overflow-hidden bg-muted border shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="https://placehold.co/800x400/0F172A/FFFFFF?text=Map+of+Islamabad" 
-                  alt="Location Map"
-                  className="w-full h-full object-cover"
+                <iframe
+                  src="https://maps.google.com/maps?q=House%20790,%20Street%2043-c,%20Phase%204-A,%20Ghouri%20Town,%20Islamabad&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Trilogicx Office Map"
                 />
               </div>
             </div>
