@@ -39,8 +39,8 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Headquarters</h3>
-                    <p className="text-muted-foreground">Park Road<br/>Islamabad, Pakistan</p>
+                    <h3 className="font-semibold text-lg">Visit Us</h3>
+                    <p className="text-muted-foreground">House 790, Street 43-c, Phase 4-A<br/>Ghouri Town, Islamabad, Pakistan</p>
                   </div>
                 </div>
                 

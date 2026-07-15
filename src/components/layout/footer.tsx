@@ -66,8 +66,8 @@ export function Footer() {
             <h3 className="font-semibold text-lg mb-6">Contact Us</h3>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary shrink-0" />
-                <span>Park Road, Islamabad, Pakistan</span>
+                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                <span>House 790, Street 43-c, Phase 4-A, Ghouri Town, Islamabad, Pakistan</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />

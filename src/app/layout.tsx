@@ -84,7 +84,7 @@ const jsonLd = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Park Road",
+    streetAddress: "House 790, Street 43-c, Phase 4-A, Ghouri Town",
     addressLocality: "Islamabad",
     addressCountry: "PK"
   },

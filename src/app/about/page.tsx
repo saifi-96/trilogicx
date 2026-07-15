@@ -56,15 +56,15 @@ export default function AboutPage() {
                 Founded with a vision to bridge the gap between complex business challenges and elegant technological solutions, Trilogicx has grown into a powerhouse of digital innovation.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Led by CEO <strong>Sidra Arshad</strong>, our team of world-class engineers and designers operate at the bleeding edge of the tech industry. We believe that great software isn&apos;t just about writing code—it&apos;s about understanding the human experience and delivering flawless performance.
+                Led by CEO <strong>Samreen Riaz</strong>, our team of world-class engineers and designers operate at the bleeding edge of the tech industry. We believe that great software isn&apos;t just about writing code—it&apos;s about understanding the human experience and delivering flawless performance.
               </p>
               <div className="flex items-center gap-4 pt-4">
                 <Avatar className="h-16 w-16 border-2 border-primary">
-                  <AvatarImage src="https://placehold.co/100x100/0F172A/FFFFFF?text=SA" alt="Sidra Arshad" />
-                  <AvatarFallback>SA</AvatarFallback>
+                  <AvatarImage src="https://placehold.co/100x100/0F172A/FFFFFF?text=SR" alt="Samreen Riaz" />
+                  <AvatarFallback>SR</AvatarFallback>
                 </Avatar>
                 <div>
-                  <div className="font-semibold text-lg">Sidra Arshad</div>
+                  <div className="font-semibold text-lg">Samreen Riaz</div>
                   <div className="text-muted-foreground">Chief Executive Officer</div>
                 </div>
               </div>
@@ -82,8 +82,8 @@ export default function AboutPage() {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Global Headquarters</h4>
-                  <p className="text-sm text-muted-foreground">Park Road, Islamabad, Pakistan</p>
+                  <h3 className="font-semibold text-foreground">Trilogicx HQ</h3>
+                  <p className="text-sm text-muted-foreground">House 790, Street 43-c, Phase 4-A, Ghouri Town<br/>Islamabad, Pakistan</p>
                 </div>
               </div>
             </div>
